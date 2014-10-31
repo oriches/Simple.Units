@@ -2,8 +2,10 @@ namespace Simple.Units
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Linq;
 
+    [DebuggerDisplay("Name = {Name}, Abbreviation = {Abbreviation}")]
     public struct Unit : IEquatable<Unit>
     {
         public sealed class Converter

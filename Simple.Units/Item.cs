@@ -1,8 +1,10 @@
 ﻿namespace Simple.Units
 {
     using System;
+    using System.Diagnostics;
     using System.Linq;
 
+    [DebuggerDisplay("Amount = {Amount}, Units = {Units.Name}")]
     public sealed class Item : IEquatable<Item>
     {
         public bool Equals(Item other)
