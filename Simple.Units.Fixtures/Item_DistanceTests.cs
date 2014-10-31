@@ -6,7 +6,7 @@
     public class Item_DistanceTests
     {
         [Test]
-        public void one_centremetre_is_nought_point_three_nine_inches()
+        public void one_centrimetre_is_nought_point_three_nine_inches()
         {
             // ARRANGE
             var itemInCentimetres = new Item(1d, Units.Centimetre);
@@ -32,7 +32,7 @@
         }
 
         [Test]
-        public void ten_thousand_centimetre_is_zero_point_one_kilometres()
+        public void ten_thousand_centimetres_is_zero_point_one_kilometres()
         {
             // ARRANGE
             var itemInCentimetres = new Item(10000d, Units.Centimetre);
@@ -71,7 +71,7 @@
         }
 
         [Test]
-        public void forty_two_kilometres_is_one_metres()
+        public void forty_two_kilometres_is_forty_two_thousand_metres()
         {
             // ARRANGE
             var itemInKilometres = new Item(42d, Units.Kilometre);
@@ -123,7 +123,7 @@
         }
 
         [Test]
-        public void one_thousand_feet_is_three_hundred_and_four_point_eight_kilometre()
+        public void one_thousand_feet_is_three_hundred_and_four_point_eight_kilometres()
         {
             // ARRANGE
             var itemInFeet = new Item(1000d, Units.Foot);

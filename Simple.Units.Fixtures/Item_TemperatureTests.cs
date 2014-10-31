@@ -28,7 +28,7 @@
         }
 
         [Test]
-        public void zero_degress_celsuis_is_thirty_two_degrees_fahrenheit()
+        public void zero_degrees_celsuis_is_thirty_two_degrees_fahrenheit()
         {
             // ARRANGE
             var itemInCelsuis = new Item(0d, Units.Celsuis);
@@ -41,7 +41,7 @@
         }
 
         [Test]
-        public void one_hundred_degress_celsuis_is_two_hundred_and_twelve_degrees_fahrenheit()
+        public void one_hundred_degrees_celsuis_is_two_hundred_and_twelve_degrees_fahrenheit()
         {
             // ARRANGE
             var itemInCelsuis = new Item(100d, Units.Celsuis);
@@ -67,7 +67,7 @@
         }
 
         [Test]
-        public void forty_two_degress_fahrenheit_is_one_hundred_and_seven_point_six_degrees_celsuis()
+        public void forty_two_degrees_fahrenheit_is_one_hundred_and_seven_point_six_degrees_celsuis()
         {
             // ARRANGE
             var itemInFahrenheit = new Item(42d, Units.Fahrenheit);
@@ -80,7 +80,7 @@
         }
 
         [Test]
-        public void forty_two_degress_fahrenheit_is_one_hundred_and_seven_point_six_degrees_kelvin()
+        public void forty_two_degrees_fahrenheit_is_one_hundred_and_seven_point_six_degrees_kelvin()
         {
             // ARRANGE
             var itemInFahrenheit = new Item(42d, Units.Fahrenheit);
@@ -93,7 +93,7 @@
         }
 
         [Test]
-        public void forty_two_degress_kelvin_is_minus_two_hundred_an_thirty_one_point_one_five_degrees_celsuis()
+        public void forty_two_degrees_kelvin_is_minus_two_hundred_an_thirty_one_point_one_five_degrees_celsuis()
         {
             // ARRANGE
             var itemInKelvin = new Item(42d, Units.Kelvin);
@@ -106,7 +106,7 @@
         }
 
         [Test]
-        public void one_thousand_and_forty_two_degress_kelvin_is_one_thousand_four_hundred_and_fifteen_point_nice_three_degrees_fahrenheit()
+        public void one_thousand_and_forty_two_degrees_kelvin_is_one_thousand_four_hundred_and_fifteen_point_nice_three_degrees_fahrenheit()
         {
             // ARRANGE
             var itemInKelvin = new Item(1042d, Units.Kelvin);
