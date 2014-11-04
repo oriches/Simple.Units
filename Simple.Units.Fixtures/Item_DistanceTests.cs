@@ -10,7 +10,7 @@
         {
             // ARRANGE
             var itemInCentimetres = new Item(1d, Units.Centimetre);
-
+            
             // ACT
             var itemInInches = itemInCentimetres.ConvertTo(Units.Inch, 2);
 

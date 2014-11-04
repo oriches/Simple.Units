@@ -64,7 +64,7 @@ namespace Simple.Units
         private readonly Lazy<IEnumerable<KeyValuePair<Unit, Func<double, double>>>> _lazyConversions;
         private Converter[] _converters;
 
-        public Unit(string name, string abbreviation, Lazy<IEnumerable<KeyValuePair<Unit, Func<double, double>>>> conversions)
+        internal Unit(string name, string abbreviation, Lazy<IEnumerable<KeyValuePair<Unit, Func<double, double>>>> conversions)
         {
             Name = name;
             Abbreviation = abbreviation;
