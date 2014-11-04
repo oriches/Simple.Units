@@ -6,7 +6,7 @@ namespace Simple.Units
     using System.Linq;
 
     [DebuggerDisplay("Name = {Name}, Abbreviation = {Abbreviation}")]
-    public struct Unit : IEquatable<Unit>
+    public sealed class Unit : IEquatable<Unit>
     {
         public sealed class Converter
         {
@@ -65,7 +65,6 @@ namespace Simple.Units
         private Converter[] _converters;
 
         public Unit(string name, string abbreviation, Lazy<IEnumerable<KeyValuePair<Unit, Func<double, double>>>> conversions)
-            : this()
         {
             Name = name;
             Abbreviation = abbreviation;
