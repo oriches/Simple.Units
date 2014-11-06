@@ -44,9 +44,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ItemTests.cs" />
-    <Compile Include="Item_DistanceTests.cs" />
-    <Compile Include="Item_TemperatureTests.cs" />
+    <Compile Include="MeasurementTests.cs" />
+    <Compile Include="Measurement_DistanceTests.cs" />
+    <Compile Include="Measurement_TemperatureTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
