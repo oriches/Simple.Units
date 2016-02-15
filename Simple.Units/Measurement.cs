@@ -36,7 +36,7 @@
 
         public override string ToString()
         {
-            return string.Format("{0} {1}", Amount, Units.Abbreviation);
+            return $"{Amount} {Units.Abbreviation}";
         }
 
         public Measurement(double amount, Unit units) : this()
@@ -45,9 +45,9 @@
             Units = units;
         }
 
-        public double Amount { get; private set; }
+        public double Amount { get; }
 
-        public Unit Units { get; private set; }
+        public Unit Units { get; }
 
         public Measurement ConvertTo(Unit newUnits)
         {
@@ -59,7 +59,7 @@
             var converter = Units.Converters.SingleOrDefault(x => x.Unit == newUnits);
             if (converter == null)
             {
-                throw new ArgumentException(string.Format("Converter not defined, {0} -> {1}", Units.Name, newUnits.Name));
+                throw new ArgumentException($"Converter not defined, {Units.Name} -> {newUnits.Name}");
             }
 
             return precision.HasValue ?

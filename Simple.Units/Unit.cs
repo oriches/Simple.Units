@@ -6,7 +6,7 @@ namespace Simple.Units
     using System.Linq;
 
     [DebuggerDisplay("Name = {Name}, Abbreviation = {Abbreviation}")]
-    public sealed class Unit : IEquatable<Unit>
+    public struct Unit : IEquatable<Unit>
     {
         public sealed class Converter
         {
@@ -48,7 +48,7 @@ namespace Simple.Units
 
         public override int GetHashCode()
         {
-            return (Name != null ? Name.GetHashCode() : 0);
+            return Name?.GetHashCode() ?? 0;
         }
 
         public static bool operator ==(Unit left, Unit right)
@@ -62,18 +62,21 @@ namespace Simple.Units
         }
 
         private readonly Lazy<IEnumerable<KeyValuePair<Unit, Func<double, double>>>> _lazyConversions;
+
         private Converter[] _converters;
 
         internal Unit(string name, string abbreviation, Lazy<IEnumerable<KeyValuePair<Unit, Func<double, double>>>> conversions)
         {
             Name = name;
             Abbreviation = abbreviation;
+
+            _converters = null;
             _lazyConversions = conversions;
         }
         
-        public string Name { get; private set; }
+        public string Name { get; }
 
-        public string Abbreviation { get; private set; }
+        public string Abbreviation { get; }
 
         public IEnumerable<Converter> Converters
         {
