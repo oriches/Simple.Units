@@ -20,4 +20,20 @@ The easiest way to demostrate is with a unit test:
   }
 ```
 
-Put simply the unit test, creates a metre measurement and then converts this into cenitmetre measurement and checks the conversion from 1 metre to 100 centimetres has been done.
+Put simply the unit test creates a metre measurement and then converts this into a cenitmetre measurement and checks the conversion from 1 metre to 100 centimetres was correct.
+
+Hopefuilly what you can see is there are 3 class involved here - **Measurement**, **Units** & **Unit**:
+
+#### Measurement
+Contains the actual measured value and units (of measure) - represents the measurement. 
+
+The important\interesting part is the **ConvertTo** method, as the name says it invokes the conversion, but does not actual do the conversion, this is the responiblity of the Unit instance.
+
+#### Unit
+Defines a 'unit of measure' as being a Name, an Abrevation and set of Conversions to other units.
+
+
+
+
+
+
