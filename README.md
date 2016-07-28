@@ -30,7 +30,33 @@ Contains the actual measured value and units (of measure) - represents the measu
 The important\interesting part is the **ConvertTo** method, as the name says it invokes the conversion, but does not actual do the conversion, this is the responiblity of the Unit instance.
 
 #### Unit
-Defines a 'unit of measure' as being a Name, an Abrevation and set of Conversions to other units.
+Defines a 'unit of measure' as being a Name, an Abrevation and set of Conversions to other units. Makes use of lazy initialisation\evaluation for converters to allow circular references be built in the code, eh?
+
+read on...
+
+#### Units
+Defines the set of 'unit of measure' I want\need in the system, and importantly defines the conversions between them. This is where the lazy initialisation\evaluation comes into play, if I hadn't used Lazy&lt;T&gt; for this it would have failed at compile time becuase there are circular references defined in the conversions.
+
+e.g kilometre -> metre -> centimetre -> kilometre -> centimetre etc..
+```C#
+ public readonly static Unit Centimetre = new Unit("Centimetre", "cm", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
+ {
+   { Metre, value => value / 100d },
+   { Kilometre, value => (value / 100d) / 1000d }
+ }));
+
+ public readonly static Unit Metre = new Unit("Metre", "m", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
+ {
+   { Centimetre, value => value * 100d },
+   { Kilometre, value => value / 1000d }
+ }));
+
+ public readonly static Unit Kilometre = new Unit("Kilometre", "km", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
+ {
+   { Metre, value => value * 1000d },
+   { Mile, value => value / 1.609344d }
+ }));
+```
 
 
 
