@@ -46,9 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MeasurementTests.cs" />
-    <Compile Include="Measurement_DistanceTests.cs" />
-    <Compile Include="Measurement_TemperatureTests.cs" />
+    <Compile Include="Measurement_Fixtures.cs" />
+    <Compile Include="Measurement_DistanceFixtures.cs" />
+    <Compile Include="Measurement_TemperatureFixtures.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
