@@ -318,7 +318,7 @@
         }
 
         [Test]
-        public void thirty_six_inches_is_three_feet()
+        public void thirty_six_inches_is_three_feet() 
         {
             // ARRANGE
             var measurementInInch = new Measurement(36d, Units.Inch);
