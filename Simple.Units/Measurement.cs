@@ -20,7 +20,7 @@
         {
             unchecked
             {
-                return (Amount.GetHashCode()*397) ^ (Units != null ? Units.GetHashCode() : 0);
+                return (Amount.GetHashCode()*397) ^ Units.GetHashCode();
             }
         }
 

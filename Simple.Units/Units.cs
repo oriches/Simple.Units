@@ -13,45 +13,45 @@
             }
         }
 
-        public readonly static Unit Celsuis = new Unit("Celsuis", "°C", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
+        public static readonly Unit Celsuis = new Unit("Celsuis", "°C", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
         {
             { Fahrenheit, value =>(value * 9d / 5d) + 32 },
             { Kelvin, value => value + 273.15 }
         }));
 
-        public readonly static Unit Fahrenheit = new Unit("Fahrenheit", "°F", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
+        public static readonly Unit Fahrenheit = new Unit("Fahrenheit", "°F", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
         {
             { Celsuis, value => ((value - 32) * 5) / 9d },
             { Kelvin, value => (((value - 32) * 5) / 9d) + 273.15 }
         }));
 
-        public readonly static Unit Kelvin = new Unit("Kelvin", "°K", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
+        public static readonly Unit Kelvin = new Unit("Kelvin", "°K", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
         {
             { Celsuis, value => value - 273.15 },
             { Fahrenheit, value => ((value - 273.15) * 9d / 5d) + 32 }
         }));
 
-        public readonly static Unit Centimetre = new Unit("Centimetre", "cm", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
+        public static readonly Unit Centimetre = new Unit("Centimetre", "cm", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
         {
             { Metre, value => value / 100d },
             { Kilometre, value => (value / 100d) / 1000d },
             { Inch, value => value * 0.393701d },
         }));
 
-        public readonly static Unit Metre = new Unit("Metre", "m", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
+        public static readonly Unit Metre = new Unit("Metre", "m", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
         {
             { Centimetre, value => value * 100d },
             { Kilometre, value => value / 1000d },
             { Yard, value => value / 0.9144d },
         }));
 
-        public readonly static Unit Kilometre = new Unit("Kilometre", "km", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
+        public static readonly Unit Kilometre = new Unit("Kilometre", "km", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
         {
             { Metre, value => value * 1000d },
             { Mile, value => value / 1.609344d },
         }));
 
-        public readonly static Unit Mile = new Unit("Mile", "mi", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
+        public static readonly Unit Mile = new Unit("Mile", "mi", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
         {
             { Metre, value => value * 1609.344d },
             { Kilometre, value => value * 1.609344d },
@@ -59,7 +59,7 @@
             { Yard, value => value * 1760d },
         }));
 
-        public readonly static Unit Yard = new Unit("Yard", "yd", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
+        public static readonly Unit Yard = new Unit("Yard", "yd", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
         {
             { Centimetre, value => value * 91.44d },
             { Metre, value => value * 0.9144d },
@@ -68,7 +68,7 @@
             { Mile, value => value / 1760d },
         }));
 
-        public readonly static Unit Foot = new Unit("Foot", "ft", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
+        public static readonly Unit Foot = new Unit("Foot", "ft", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
         {
             { Centimetre, value => value * 30.48d },
             { Metre, value => value * 0.3048d },
@@ -77,7 +77,7 @@
             { Yard, value => value * 0.333333d },
         }));
 
-        public readonly static Unit Inch = new Unit("Inch", "in", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
+        public static readonly Unit Inch = new Unit("Inch", "in", new LazyConversions(() => new Dictionary<Unit, Func<double, double>>
         {
             { Centimetre, value => value / 0.393700d },
             { Yard, value => value * 0.0277778d },
