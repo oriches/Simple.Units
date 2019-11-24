@@ -4,7 +4,7 @@
     using NUnit.Framework;
 
     [TestFixture]
-    public class Measurement_Fixtures
+    public class Measurement_Tests
     {
         [Test]
         public void measurement_is_formatted()

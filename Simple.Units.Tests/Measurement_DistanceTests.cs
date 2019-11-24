@@ -3,7 +3,7 @@
     using NUnit.Framework;
 
     [TestFixture]
-    public class Measurement_DistanceFixtures
+    public class Measurement_DistanceTests
     {
         [Test]
         public void one_centrimetre_is_nought_point_three_nine_inches()

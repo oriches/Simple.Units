@@ -4,7 +4,7 @@
     using NUnit.Framework;
 
     [TestFixture]
-    public class Measurement_TemperatureFixtures
+    public class Measurement_TemperatureTests
     {
         [Test]
         public void throws_exception_when_trying_invalid_conversion()
